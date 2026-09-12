@@ -12,7 +12,6 @@ import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
-import UpworkPortfolioPage from "./pages/UpworkPortfolioPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 /** Handles a direct link like /#projects — jumps once, instantly. */
@@ -32,15 +31,12 @@ function InitialHashHandler() {
 }
 
 function AppContent({ loading }) {
-  const location = useLocation();
-  const upworkMode = location.pathname === "/upwork" || location.pathname.startsWith("/upwork/projects/");
-
   return (
     <>
       <AnimatePresence mode="wait">{loading && <Loading key="loading" />}</AnimatePresence>
 
       <ScrollProgress />
-      {!upworkMode && <Navbar />}
+      <Navbar />
       <InitialHashHandler />
 
       <Toaster
@@ -59,12 +55,10 @@ function AppContent({ loading }) {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-        <Route path="/upwork" element={<UpworkPortfolioPage />} />
-        <Route path="/upwork/projects/:slug" element={<ProjectDetailPage upworkMode />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
-      {!upworkMode && <Footer />}
+      <Footer />
     </>
   );
 }

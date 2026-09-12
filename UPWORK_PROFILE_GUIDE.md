@@ -126,8 +126,8 @@ John Vince
 
 ## Portfolio URL for Upwork
 
-Use the dedicated route below after deployment:
+Use the main deployed portfolio:
 
-`https://YOUR-DOMAIN/upwork`
+`https://johnvincelopez811.github.io/john-vince-lopez-portfolio/`
 
-Add the real Upwork freelancer URL to `socials.upwork` in `src/data/site.js`. This automatically enables the Upwork message buttons on the dedicated page.
+The real freelancer URL is configured in `socials.upwork` inside `src/data/site.js` and enables the Upwork links across the main portfolio.

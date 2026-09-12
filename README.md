@@ -20,8 +20,6 @@ npm run build
 
 - `/` — complete professional portfolio
 - `/projects/:slug` — full project case studies
-- `/upwork` — client-focused portfolio without direct contact information
-- `/upwork/projects/:slug` — Upwork-safe case study pages
 
 ## GitHub Pages deployment
 
@@ -47,7 +45,5 @@ export const socials = {
   upwork: "https://www.upwork.com/freelancers/YOUR-PROFILE",
 };
 ```
-
-The dedicated `/upwork` route intentionally excludes email, phone, Viber, resume downloads, LinkedIn, and other outbound contact links. Clients should return to Upwork to communicate before a contract begins.
 
 Ready-to-use Upwork profile copy, project descriptions, Project Catalog ideas, and a proposal template are in `UPWORK_PROFILE_GUIDE.md`.

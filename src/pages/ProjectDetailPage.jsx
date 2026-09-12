@@ -7,7 +7,7 @@ import Container from "../components/Container/Container";
 import DeviceFrame from "../components/DeviceFrame/DeviceFrame";
 import { fadeUp, staggerContainer, viewportOnce } from "../lib/motion";
 
-export default function ProjectDetailPage({ upworkMode = false }) {
+export default function ProjectDetailPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const project = getProjectBySlug(slug);
@@ -17,7 +17,7 @@ export default function ProjectDetailPage({ upworkMode = false }) {
   }, [slug]);
 
   if (!project) {
-    return <Navigate to={upworkMode ? "/upwork" : "/projects/not-found"} replace />;
+    return <Navigate to="/projects/not-found" replace />;
   }
 
   return (
@@ -25,14 +25,10 @@ export default function ProjectDetailPage({ upworkMode = false }) {
       <Container>
         <button
           type="button"
-          onClick={() =>
-            upworkMode
-              ? navigate("/upwork", { state: { scrollTo: "upwork-projects" } })
-              : navigate("/", { state: { scrollTo: "projects" } })
-          }
+          onClick={() => navigate("/", { state: { scrollTo: "projects" } })}
           className="focus-ring inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-faint hover:text-accent transition-colors"
         >
-          <FaArrowLeft aria-hidden="true" /> Back to {upworkMode ? "Upwork portfolio" : "projects"}
+          <FaArrowLeft aria-hidden="true" /> Back to projects
         </button>
 
         <motion.div
@@ -157,12 +153,6 @@ export default function ProjectDetailPage({ upworkMode = false }) {
           </motion.aside>
         </div>
 
-        {upworkMode && (
-          <div className="mt-12 rounded-2xl border border-line bg-surface-2/50 px-5 py-5 text-center">
-            <p className="font-display text-xl font-semibold text-ink">Interested in a similar project?</p>
-            <p className="mt-2 text-sm text-muted">Return to my Upwork profile to discuss your scope through Upwork.</p>
-          </div>
-        )}
       </Container>
     </main>
   );
