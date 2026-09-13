@@ -23,7 +23,7 @@ import { EASE, fadeUp, staggerContainer } from "../../lib/motion";
 import resumeFile from "../../assets/resume/JohnVinceLopez_Resume.pdf";
 import cvFile from "../../assets/resume/JohnVinceLopez_CV.pdf";
 
-import portrait from "../../assets/images/JohnVinceLopez.png";
+import portrait from "../../assets/images/JohnVinceLopez-optimized.jpg";
 
 const RECIPIENT_EMAIL = "johnvincelopez811@gmail.com";
 const EMAIL_SUBJECT = "Project Inquiry for John Vince Lopez";

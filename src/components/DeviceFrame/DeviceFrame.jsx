@@ -20,7 +20,13 @@ export default function DeviceFrame({
           <div className="relative overflow-hidden rounded-[1.5rem] aspect-[9/19.5] bg-surface-2">
             <div className="absolute left-1/2 top-2 h-1.5 w-10 -translate-x-1/2 rounded-full bg-line z-10" />
             {image ? (
-              <img src={image} alt={alt} className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+              <img
+                src={image}
+                alt={alt}
+                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
             ) : (
               <Placeholder
                 compact
@@ -44,7 +50,13 @@ export default function DeviceFrame({
       </div>
       <div className="relative aspect-[16/10] bg-surface-2">
         {image ? (
-          <img src={image} alt={alt} className="h-full w-full object-contain object-center" loading="lazy" />
+          <img
+            src={image}
+            alt={alt}
+            className="h-full w-full object-contain object-center"
+            loading="lazy"
+            decoding="async"
+          />
         ) : (
           <Placeholder
             isPrivate={isPrivate}

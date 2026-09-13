@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 
 /**
@@ -7,7 +8,23 @@ import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
  */
 export default function Marquee({ items, direction = "left", renderItem }) {
   const prefersReducedMotion = usePrefersReducedMotion();
-  const animationClass = prefersReducedMotion
+  const marqueeRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    if (!marquee) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: "120px 0px" },
+    );
+
+    observer.observe(marquee);
+    return () => observer.disconnect();
+  }, []);
+
+  const animationClass = prefersReducedMotion || !isVisible
     ? ""
     : direction === "left"
     ? "animate-marquee"
@@ -15,6 +32,7 @@ export default function Marquee({ items, direction = "left", renderItem }) {
 
   return (
     <div
+      ref={marqueeRef}
       className="group relative overflow-hidden"
       style={{
         maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",

@@ -16,8 +16,16 @@ export default function Navbar() {
   const onHome = location.pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    let currentScrolled = window.scrollY > 24;
+    setScrolled(currentScrolled);
+
+    const onScroll = () => {
+      const nextScrolled = window.scrollY > 24;
+      if (nextScrolled === currentScrolled) return;
+
+      currentScrolled = nextScrolled;
+      setScrolled(nextScrolled);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -51,7 +59,7 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 inset-x-0 z-50 themed-transition ${
-        scrolled ? "bg-canvas/90 backdrop-blur-md border-b border-line" : "border-b border-transparent"
+        scrolled ? "bg-canvas/95 border-b border-line" : "border-b border-transparent"
       }`}
     >
       <Container as="nav" className="flex h-16 items-center justify-between">

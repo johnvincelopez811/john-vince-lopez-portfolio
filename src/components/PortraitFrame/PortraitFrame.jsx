@@ -20,6 +20,7 @@ export default function PortraitFrame({ image }) {
               alt={personal.portraitAlt}
               className="h-full w-full object-cover object-top"
               fetchPriority="high"
+              decoding="async"
               width={720}
               height={900}
             />

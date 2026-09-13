@@ -1,8 +1,8 @@
-import sumbongCover from "../assets/projects/SUMBONG-Website.png";
-import sumbongMobile from "../assets/projects/SUMBONG-Mobile Application.png";
-import floraLaneMobile from "../assets/projects/FloralLane-Mobile Application.png";
-import floraLaneWebsite from "../assets/projects/FloralLane-Website.png";
-import codeWatchMobile from "../assets/projects/CodeWatch-Mobile Application.png";
+import sumbongCover from "../assets/projects/SUMBONG-Website-optimized.jpg";
+import sumbongMobile from "../assets/projects/SUMBONG-Mobile-optimized.jpg";
+import floraLaneMobile from "../assets/projects/FloralLane-Mobile-optimized.jpg";
+import floraLaneWebsite from "../assets/projects/FloralLane-Website-optimized.jpg";
+import codeWatchMobile from "../assets/projects/CodeWatch-Mobile-optimized.jpg";
 
 // ---------------------------------------------------------------------------
 // PROJECTS

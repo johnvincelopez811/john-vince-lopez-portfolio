@@ -36,7 +36,7 @@ export default function UpworkPortfolioPage() {
 
   return (
     <main>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-canvas/90 backdrop-blur-md">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-canvas/95">
         <Container className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
             <JVLMark size="sm" />
