@@ -1,16 +1,12 @@
 import { useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaDownload, FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { aboutPage, personal } from "../data/site";
 import Container from "../components/Container/Container";
 import Button from "../components/Button/Button";
 import useSectionNav from "../hooks/useSectionNav";
 import { fadeUp, staggerContainer, viewportOnce } from "../lib/motion";
-
-// Resume expected at src/assets/resume/<personal.resumeFileName>.
-// import resumeFile from `../assets/resume/${personal.resumeFileName}`;
-const resumeFile = null;
 
 export default function AboutPage() {
   const goToSection = useSectionNav();
@@ -103,21 +99,6 @@ export default function AboutPage() {
             </div>
 
             <div className="card rounded-2xl p-6 flex flex-col gap-3">
-              <Button
-                variant="primary"
-                href={resumeFile || undefined}
-                disabled={!resumeFile}
-                icon={FaDownload}
-                download
-                className="w-full"
-                aria-label={
-                  resumeFile
-                    ? "Download resume"
-                    : `Resume not uploaded yet. Add ${personal.resumeFileName} to src/assets/resume`
-                }
-              >
-                Download Resume
-              </Button>
               <Button variant="secondary" icon={FaArrowRight} className="w-full" onClick={() => goToSection("contact")}>
                 Get in Touch
               </Button>
