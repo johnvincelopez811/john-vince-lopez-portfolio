@@ -137,17 +137,13 @@ function ExperienceCard({ role, index }) {
           </span>
         </div>
 
-        <p className="mt-5 text-sm leading-6 text-muted">
-          {role.summary}
-        </p>
-
         <div className="mt-6 rounded-2xl border border-line bg-surface-2/40 p-4">
           <p className="mb-4 font-mono text-[9px] uppercase tracking-[0.18em] text-faint">
             Key Contributions
           </p>
 
           <ul className="flex flex-col gap-3">
-            {role.highlights.map((item) => (
+            {role.highlights.slice(0, 2).map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-3 text-sm leading-6 text-muted"
@@ -168,7 +164,7 @@ function ExperienceCard({ role, index }) {
           </p>
 
           <div className="flex flex-wrap gap-2">
-            {role.tools.map((tool) => (
+            {role.tools.slice(0, 4).map((tool) => (
               <span
                 key={tool}
                 className="keycap rounded-md px-2.5 py-1 font-mono text-[10px] text-muted"
@@ -184,6 +180,8 @@ function ExperienceCard({ role, index }) {
 }
 
 export default function Experience() {
+  const careerPath = [...experience.slice(1), experience[0]];
+
   return (
     <section
       id="experience"
@@ -191,9 +189,8 @@ export default function Experience() {
     >
       <Container>
         <SectionTitle
-          eyebrow="07 · Professional Experience"
-          title="Building for the web, backed by quality."
-          description="Professional web development experience supported by a foundation in systems analysis and software quality assurance."
+          eyebrow="06 · Experience"
+          title="Professional experience"
         />
 
         <motion.div
@@ -235,45 +232,38 @@ export default function Experience() {
         </div>
 
         <motion.div
-          className="mt-6 flex flex-col gap-4 rounded-2xl border border-line bg-surface-2/40 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+          className="mt-8 overflow-hidden rounded-[28px] border border-line bg-surface-2/40 p-5 sm:p-7"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <div>
-            <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-faint">
-              Career Progression
-            </p>
-
-            <p className="mt-1 text-sm text-muted">
-              From systems analysis and QA to professional web development.
-            </p>
+          <div className="flex items-center gap-4">
+            <div>
+              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-accent">Career Map</p>
+              <h3 className="mt-2 font-display text-2xl font-semibold text-ink">From systems to the web</h3>
+            </div>
+            <span className="hidden h-px flex-1 bg-line sm:block" />
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            {[...experience.slice(1), experience[0]].map((role, index, roles) => (
-              <div
+          <ol className="relative mt-8 grid grid-cols-1 gap-5 before:absolute before:bottom-8 before:left-5 before:top-8 before:border-l before:border-dashed before:border-accent/50 md:grid-cols-3 md:before:bottom-auto md:before:left-[12%] md:before:right-[12%] md:before:top-5 md:before:border-l-0 md:before:border-t">
+            {careerPath.map((role, index) => (
+              <li
                 key={role.id}
-                className="flex items-center gap-3"
+                className="relative z-10 grid grid-cols-[2.5rem_1fr] items-start gap-4 md:flex md:flex-col md:items-center md:text-center"
               >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line bg-canvas font-mono text-[9px] text-accent">
+                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border font-mono text-[9px] font-semibold shadow-sm ${role.featured ? "border-accent bg-accent text-accent-ink" : "border-accent/60 bg-canvas text-accent"}`}>
                   {role.phase}
                 </span>
 
-                <span className="text-xs font-medium text-ink">
-                  {role.role}
-                </span>
-
-                {index < roles.length - 1 && (
-                  <span
-                    className="hidden h-px w-8 bg-line sm:block"
-                    aria-hidden="true"
-                  />
-                )}
-              </div>
+                <div className="rounded-2xl border border-line bg-canvas/70 px-4 py-4 md:w-full">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-faint">Milestone {String(index + 1).padStart(2, "0")}</span>
+                  <p className="mt-2 text-sm font-semibold leading-5 text-ink">{role.role}</p>
+                  <p className="mt-1 text-xs leading-5 text-muted">{role.company}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </motion.div>
       </Container>
     </section>

@@ -65,26 +65,26 @@ export const workProcess = [
   {
     number: "01",
     title: "Discover",
-    description: "We clarify the problem, users, priorities, and the result you need.",
+    description: "Clarify the goal, users, and priorities.",
   },
   {
     number: "02",
     title: "Scope",
-    description: "I turn the requirements into agreed deliverables, milestones, and boundaries.",
+    description: "Define deliverables and milestones.",
   },
   {
     number: "03",
     title: "Build",
-    description: "I develop in reviewable stages and share clear progress updates along the way.",
+    description: "Build in clear, reviewable stages.",
   },
   {
     number: "04",
     title: "Review",
-    description: "We test the important flows, collect feedback, and refine the agreed work.",
+    description: "Test, gather feedback, and refine.",
   },
   {
     number: "05",
     title: "Handoff",
-    description: "You receive the completed files, documentation, and a clear project handoff.",
+    description: "Deliver the files and documentation.",
   },
 ];

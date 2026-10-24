@@ -96,9 +96,9 @@ export default function Contact() {
     <section id="contact" className="relative py-14 sm:py-20 border-t border-line">
       <Container>
         <SectionTitle
-          eyebrow="08 · Start a Project"
-          title="Tell me what you need to build or improve"
-          description="Share the goal, current setup, and most important requirement. I can help define a practical next step before development begins."
+          eyebrow="07 · Contact"
+          title="Let's build something"
+          description="Share your goal and I'll help define the next step."
         />
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 items-stretch">
@@ -127,9 +127,9 @@ export default function Contact() {
               </div>
             ))}
 
-            <div className="card rounded-2xl p-5 flex-1 flex flex-col justify-between gap-4">
+            <div className="card w-fit max-w-full rounded-2xl px-5 py-4">
               <div>
-                <p className="text-xs font-mono uppercase tracking-widest text-faint mb-2">Elsewhere</p>
+                <p className="mb-3 font-mono text-[10px] uppercase tracking-widest text-faint">Elsewhere</p>
                 <div className="flex items-center gap-3">
                   {socialLinks.map(({ key, Icon, label }) => {
                     const url = socials[key];
@@ -141,7 +141,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noreferrer noopener"
                         aria-label={label}
-                        className="focus-ring flex h-10 w-10 items-center justify-center rounded-full border border-line text-muted hover:text-accent hover:border-accent/60 hover:-translate-y-0.5 transition-all duration-200"
+                        className="focus-ring flex h-9 w-9 items-center justify-center rounded-full border border-line text-sm text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/60 hover:text-accent"
                       >
                         <Icon />
                       </a>
@@ -152,10 +152,6 @@ export default function Contact() {
                   )}
                 </div>
               </div>
-              <p className="text-sm text-muted leading-relaxed">
-                Prefer email? Messages sent through the form open directly in your email app —
-                nothing is sent silently.
-              </p>
             </div>
           </motion.div>
 

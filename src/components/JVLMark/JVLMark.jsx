@@ -8,13 +8,9 @@ export default function JVLMark({ size = "base", className = "" }) {
 
   return (
     <span className={`inline-flex items-center gap-[3px] font-display font-semibold ${textSize} ${className}`}>
-      <span aria-hidden="true" className="text-accent">
-        [
-      </span>
+      <span aria-hidden="true" className="text-accent">[</span>
       <span className="text-ink">JVL</span>
-      <span aria-hidden="true" className="text-accent">
-        ]
-      </span>
+      <span aria-hidden="true" className="text-accent">]</span>
     </span>
   );
 }

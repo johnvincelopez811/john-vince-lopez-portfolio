@@ -281,9 +281,9 @@ export default function Hero() {
                   <Button
                     variant="primary"
                     icon={FaArrowRight}
-                    onClick={() => goToSection("services")}
+                    onClick={() => goToSection("projects")}
                   >
-                    View My Services
+                    View My Work
                   </Button>
 
                   <div className="relative" ref={downloadRef}>

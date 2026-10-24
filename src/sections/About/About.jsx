@@ -12,21 +12,19 @@ export default function About() {
       id="about"
       className="relative overflow-hidden border-t border-line py-16 sm:py-24"
     >
-
-
       <Container>
-        <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 xl:gap-20">
           {/* Left side */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="lg:sticky lg:top-28 lg:self-start"
+            className="min-w-0"
           >
             <div className="flex items-center gap-3">
               <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
-                05
+                04
               </span>
 
               <span className="h-px w-8 bg-accent" />
@@ -36,8 +34,8 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className="mt-5 max-w-md font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
-              A little more about me
+            <h2 className="mt-5 max-w-lg font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl">
+              A little about me
             </h2>
 
             <div className="mt-5 min-h-7 font-mono text-sm text-accent sm:text-base">
@@ -58,30 +56,25 @@ export default function About() {
               />
             </div>
 
-            <p className="mt-5 max-w-sm text-sm leading-7 text-muted sm:text-base">
-              My background, experience, and the direction I am taking as a
-              developer.
-            </p>
-
             <div className="mt-7 h-px w-16 bg-accent" />
           </motion.div>
 
           {/* Right side */}
           <motion.div
-            className="flex flex-col gap-7"
+            className="flex min-w-0 flex-col gap-7"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <div className="space-y-4 text-base leading-7 text-muted">
+            <div className="max-w-2xl text-base leading-7 text-muted">
               {aboutPreview.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
             <motion.dl
-              className="grid grid-cols-1 border-y border-line sm:grid-cols-2"
+              className="grid grid-cols-1 overflow-hidden rounded-2xl border border-line bg-surface-2/35 md:grid-cols-3"
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
@@ -111,11 +104,9 @@ export default function About() {
                     duration: 0.35,
                     ease: "easeOut",
                   }}
-                  className={`min-h-[105px] px-1 py-5 sm:px-5 ${
-                    index % 2 === 0 ? "sm:border-r sm:border-line" : ""
-                  } ${
-                    index < aboutPreview.facts.length - 2
-                      ? "border-b border-line"
+                  className={`flex min-h-32 flex-col justify-between px-5 py-5 sm:px-6 ${
+                    index < aboutPreview.facts.length - 1
+                      ? "border-b border-line md:border-b-0 md:border-r"
                       : ""
                   }`}
                 >
@@ -123,7 +114,7 @@ export default function About() {
                     {fact.label}
                   </dt>
 
-                  <dd className="mt-2 text-base font-semibold leading-6 text-ink">
+                  <dd className="mt-4 break-words text-base font-semibold leading-6 text-ink">
                     {fact.value}
                   </dd>
                 </motion.div>

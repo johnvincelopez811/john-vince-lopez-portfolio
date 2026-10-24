@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
 import { getProjectBySlug } from "../data/projects";
 import Container from "../components/Container/Container";
 import DeviceFrame from "../components/DeviceFrame/DeviceFrame";
@@ -51,12 +51,24 @@ export default function ProjectDetailPage({ upworkMode = false }) {
             {project.summary}
           </motion.p>
 
+          {project.liveUrl && (
+            <motion.a
+              variants={fadeUp}
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="focus-ring mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-accent bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition-all hover:-translate-y-0.5 hover:bg-ink hover:text-canvas"
+            >
+              Visit Live Website <FaExternalLinkAlt className="text-xs" aria-hidden="true" />
+            </motion.a>
+          )}
+
         </motion.div>
 
         <div
           className={`mt-10 ${
             project.mobileImage
-              ? "grid grid-cols-1 items-end gap-8 lg:grid-cols-[1fr_0.42fr]"
+              ? "grid grid-cols-1 items-start gap-8 sm:grid-cols-2"
               : "max-w-2xl"
           }`}
         >
@@ -71,6 +83,7 @@ export default function ProjectDetailPage({ upworkMode = false }) {
               isPrivate={project.isPrivate}
               placeholderTitle={project.placeholderTitle}
               placeholderMessage={project.placeholderMessage}
+              matchedHeight={Boolean(project.mobileImage)}
             />
           </div>
 
@@ -81,6 +94,7 @@ export default function ProjectDetailPage({ upworkMode = false }) {
                 image={project.mobileImage}
                 alt={`${project.title} mobile application preview`}
                 deviceType="mobile"
+                matchedHeight
               />
             </div>
           )}
@@ -139,7 +153,7 @@ export default function ProjectDetailPage({ upworkMode = false }) {
               <p className="eyebrow mb-3">My role</p>
               <p className="text-sm text-muted leading-relaxed">{project.role}</p>
               {project.contributionType && (
-                <p className="font-mono text-[10px] uppercase tracking-wider text-faint border border-line rounded-md px-2 py-0.5 mt-3 w-fit">
+                <p className="mt-4 w-fit rounded-full border border-accent/40 bg-accent-soft px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-accent">
                   {project.contributionType}
                 </p>
               )}

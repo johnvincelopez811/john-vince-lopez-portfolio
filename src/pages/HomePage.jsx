@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { navigateToSection } from "../lib/navigation";
 import Hero from "../sections/Hero/Hero";
-import Services from "../sections/Services/Services";
 import Process from "../sections/Process/Process";
 import About from "../sections/About/About";
 import Skills from "../sections/Skills/Skills";
@@ -29,7 +28,6 @@ export default function HomePage() {
     <main>
       <BuildIndexRail />
       <Hero />
-      <Services />
       <Projects />
       <Process />
       <About />

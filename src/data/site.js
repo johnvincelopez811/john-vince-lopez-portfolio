@@ -16,8 +16,8 @@ export const personal = {
   ],
   heroGreeting: "Hi, I'm",
   heroStatement:
-    "I build responsive websites, internal business systems, and mobile applications that turn everyday workflows into clear, practical digital experiences.",
-  availabilityTags: ["React & Flutter", "Web + Mobile", "Retail systems experience"],
+    "I develop web and mobile applications with a focus on clean design, functionality, and ease of use.",
+  availabilityTags: ["React & Flutter", "Web + Mobile"],
   portraitLabels: ["JVL · BUILD 01", "WEB + MOBILE"],
   summary:
     "Web Developer at New Era Cap Philippines under Authentic Caps Retail, Inc. I build and maintain user-focused web experiences for the retail and apparel industry, backed by experience in full-stack development, systems analysis, quality assurance, and interface design.",
@@ -46,7 +46,6 @@ export const socials = {
 
 export const navLinks = [
   { label: "Home", to: "hero" },
-  { label: "Services", to: "services" },
   { label: "Projects", to: "projects" },
   { label: "Process", to: "process" },
   { label: "About", to: "about" },
@@ -59,13 +58,12 @@ export const navLinks = [
 // entry per major section, in narrative order.
 export const buildIndex = [
   { num: "01", to: "hero", label: "Welcome" },
-  { num: "02", to: "services", label: "Services" },
-  { num: "03", to: "projects", label: "Works" },
-  { num: "04", to: "process", label: "Process" },
-  { num: "05", to: "about", label: "Profile" },
-  { num: "06", to: "skills", label: "Stack" },
-  { num: "07", to: "experience", label: "Journey" },
-  { num: "08", to: "contact", label: "Reach Out" },
+  { num: "02", to: "projects", label: "Works" },
+  { num: "03", to: "process", label: "Process" },
+  { num: "04", to: "about", label: "Profile" },
+  { num: "05", to: "skills", label: "Stack" },
+  { num: "06", to: "experience", label: "Journey" },
+  { num: "07", to: "contact", label: "Reach Out" },
 ];
 
 // Compact, verified capability preview shown inside the Hero composition.
@@ -93,12 +91,10 @@ export const footerClosingLine = "Built with clarity, curiosity, and continuous 
 
 export const aboutPreview = {
   paragraphs: [
-    "I'm currently a Web Developer for New Era Cap Philippines under Authentic Caps Retail, Inc., a company in the retail, apparel, fashion, and clothing accessories industry.",
-    "I enjoy turning business needs into clear, responsive, and practical web experiences while continuing to grow across web and mobile development.",
+    "I'm a Web Developer at New Era Cap Philippines, focused on clear and practical digital experiences.",
   ],
   facts: [
     { label: "Current role", value: "Web Developer" },
-    { label: "Brand", value: "New Era Cap Philippines" },
     { label: "Company", value: "Authentic Caps Retail, Inc." },
     { label: "Industry", value: "Retail & Apparel" },
   ],

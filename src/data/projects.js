@@ -3,6 +3,9 @@ import sumbongMobile from "../assets/projects/SUMBONG-Mobile-optimized.jpg";
 import floraLaneMobile from "../assets/projects/FloralLane-Mobile-optimized.jpg";
 import floraLaneWebsite from "../assets/projects/FloralLane-Website-optimized.jpg";
 import codeWatchMobile from "../assets/projects/CodeWatch-Mobile-optimized.jpg";
+import ntsWeb from "../assets/projects/NTS-Web-optimized.jpg";
+import ntsMobile from "../assets/projects/04893468-2d60-41b8-8b89-da86a5f3b13f.png";
+import ahciWebsite from "../assets/projects/AHCI-Website.png";
 
 // ---------------------------------------------------------------------------
 // PROJECTS
@@ -18,26 +21,27 @@ export const projects = [
   {
     id: "neticketing-system",
     slug: "neticketing-system",
+    current: true,
     title: "Neticketing System",
     category: "Internal Retail Support System",
     status: "Active · Private",
     featured: true,
-    summary: "An internal ticketing system for reporting and tracking store support requests.",
+    summary: "A web and mobile support-ticket system for New Era Cap Philippines store teams.",
     problem: "Store concerns needed one clear and trackable reporting channel.",
     users: "New Era Cap Philippines store teams and internal support personnel.",
-    solution: "A centralized workflow for submitting, reviewing, tracking, and resolving store tickets.",
+    solution: "A connected web and mobile workflow for submitting, reviewing, tracking, and resolving store tickets.",
     overview:
       "The main internal system I currently handle as Web Developer for New Era Cap Philippines, covering requests such as void approvals and store computer issues.",
     features: [
-      "Store issue and support ticket submission",
+      "Web and mobile support ticket submission",
       "Void request reporting and tracking",
       "Computer and system concern monitoring",
       "Centralized ticket status and follow-up",
     ],
-    technologies: ["Internal Web Platform", "Ticket Workflow", "Store Support"],
+    technologies: ["Web Application", "Mobile Application", "Ticket Workflow", "Store Support"],
     tagsLabel: "System Focus",
-    role: "Web Developer — currently responsible for handling, maintaining, and supporting the system.",
-    contributionType: "Primary System Handled · Current Role",
+    role: "Web & Mobile Developer — currently developing, maintaining, and supporting the system across platforms.",
+    contributionType: "Current Role · Web & Mobile Developer",
     decisions: [],
     challenges: [
       {
@@ -48,7 +52,9 @@ export const projects = [
     outcomes: "Provides a consistent internal process for reporting and tracking store support concerns.",
     lessons: "Internal tools work best when reporting steps are clear and status updates are easy to follow.",
     futureImprovements: [],
-    coverImage: null,
+    coverImage: ntsWeb,
+    mobileImage: ntsMobile,
+    webPreviewLabel: "Web application",
     gallery: [],
     deviceType: "browser",
     isPrivate: true,
@@ -56,6 +62,45 @@ export const projects = [
     placeholderMessage: "The actual interface is not shown to protect company and operational information.",
     githubUrl: "",
     liveUrl: "",
+  },
+  {
+    id: "ahci-company-portfolio",
+    slug: "ahci-company-portfolio",
+    current: true,
+    title: "AHCI Company Portfolio",
+    category: "Professional Company Website",
+    status: "Active · Professional",
+    featured: false,
+    summary: "As Web Developer, I handle ongoing AHCI website updates and manage company content through Strapi.",
+    problem: "Company information and portfolio content need to stay accurate, organized, and current.",
+    users: "Prospective clients, partners, applicants, and company stakeholders.",
+    solution: "Maintain the public website and manage structured content through Strapi for faster, consistent updates.",
+    overview: "I currently handle website updates and Strapi-managed content for the AHCI company portfolio.",
+    features: [
+      "Company portfolio and service content updates",
+      "Strapi content management",
+      "Website maintenance and quality checks",
+    ],
+    technologies: ["Strapi", "CMS", "Web Maintenance", "Content Management"],
+    role: "Web Developer — handles website updates, content maintenance, and Strapi-managed publishing.",
+    contributionType: "Web Developer · Updates & Strapi",
+    decisions: [],
+    challenges: [
+      {
+        challenge: "Keep company content current without disrupting the public website.",
+        resolution: "Use structured Strapi content and review updates before publishing.",
+      },
+    ],
+    outcomes: "Keeps the company portfolio current and easier to maintain through a structured content workflow.",
+    lessons: "A clear CMS workflow makes frequent company updates safer and more consistent.",
+    futureImprovements: [],
+    coverImage: ahciWebsite,
+    gallery: [],
+    deviceType: "browser",
+    placeholderTitle: "AHCI Company Portfolio",
+    placeholderMessage: "Website updates and Strapi content management.",
+    githubUrl: "",
+    liveUrl: "https://ahci.com.ph/",
   },
   {
     id: "sumbong",

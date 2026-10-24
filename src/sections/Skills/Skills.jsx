@@ -222,15 +222,15 @@ export default function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid min-w-0 gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14"
+          className="flex min-w-0 flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
         >
           <motion.div
             variants={itemVariants}
-            className="min-w-0"
+            className="min-w-0 max-w-2xl"
           >
             <div className="flex flex-wrap items-center gap-3">
               <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
-                06
+                05
               </span>
 
               <span className="h-px w-8 bg-accent" />
@@ -241,7 +241,7 @@ export default function Skills() {
             </div>
 
             <h2 className="mt-5 max-w-[34rem] break-words font-display text-[2.15rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl">
-              Tools I use to build and deliver projects
+              My development toolkit
             </h2>
 
             <motion.div
@@ -276,7 +276,7 @@ export default function Skills() {
                   width: 0,
                 }}
                 whileInView={{
-                  width: "18ch",
+                  width: "13ch",
                 }}
                 viewport={viewportOnce}
                 transition={{
@@ -286,7 +286,7 @@ export default function Skills() {
                 }}
                 className="max-w-full overflow-hidden whitespace-nowrap"
               >
-                loading skill set...
+                toolkit ready
               </motion.span>
 
               <motion.span
@@ -305,21 +305,13 @@ export default function Skills() {
 
           <motion.div
             variants={itemVariants}
-            className="flex min-w-0 items-end"
+            className="shrink-0"
           >
-            <div className="min-w-0 max-w-2xl">
-              <p className="break-words text-base leading-7 text-muted sm:text-lg">
-                A practical stack used across professional retail support,
-                full-stack academic projects, and continuous development.
-              </p>
-
-              <div className="mt-6 flex min-w-0 items-center gap-4">
-                <span className="h-px min-w-0 flex-1 bg-line" />
-
-                <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-faint">
-                  {allSkills.length} tools listed
-                </span>
-              </div>
+            <div className="flex items-center gap-4 rounded-2xl border border-line bg-surface-2/50 px-5 py-4">
+              <span className="font-display text-3xl font-semibold text-accent">{allSkills.length}</span>
+              <span className="font-mono text-[10px] uppercase leading-5 tracking-[0.18em] text-faint">
+                Tools<br />listed
+              </span>
             </div>
           </motion.div>
         </motion.div>

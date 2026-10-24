@@ -12,12 +12,16 @@ export default function DeviceFrame({
   isPrivate = false,
   placeholderTitle,
   placeholderMessage,
+  matchedHeight = false,
+  imageFit = "contain",
 }) {
+  const largeMatchedPreview = matchedHeight === "large";
+
   if (deviceType === "mobile") {
     return (
-      <div className="mx-auto w-full max-w-[220px]">
-        <div className="card rounded-[2rem] p-2 shadow-sm">
-          <div className="relative overflow-hidden rounded-[1.5rem] aspect-[9/19.5] bg-surface-2">
+      <div className={largeMatchedPreview ? "mx-auto h-[300px] w-[138px] sm:h-[340px] sm:w-[157px]" : matchedHeight ? "mx-auto h-[220px] w-[102px] sm:h-[260px] sm:w-[120px]" : "mx-auto w-full max-w-[220px]"}>
+        <div className={`card rounded-[2rem] p-2 shadow-sm ${matchedHeight ? "h-full" : ""}`}>
+          <div className={`relative overflow-hidden rounded-[1.5rem] bg-surface-2 ${matchedHeight ? "h-full" : "aspect-[9/19.5]"}`}>
             <div className="absolute left-1/2 top-2 h-1.5 w-10 -translate-x-1/2 rounded-full bg-line z-10" />
             {image ? (
               <img
@@ -42,18 +46,18 @@ export default function DeviceFrame({
   }
 
   return (
-    <div className="card overflow-hidden rounded-xl shadow-sm">
+    <div className={`card overflow-hidden rounded-xl shadow-sm ${largeMatchedPreview ? "flex h-[300px] flex-col sm:h-[340px]" : matchedHeight ? "flex h-[220px] flex-col sm:h-[260px]" : ""}`}>
       <div className="flex items-center gap-1.5 border-b border-line px-4 py-2.5 bg-surface-2">
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden="true" />
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden="true" />
         <span className="h-2.5 w-2.5 rounded-full bg-line" aria-hidden="true" />
       </div>
-      <div className="relative aspect-[16/10] bg-surface-2">
+      <div className={`relative bg-surface-2 ${matchedHeight ? "min-h-0 flex-1" : "aspect-[16/10]"}`}>
         {image ? (
           <img
             src={image}
             alt={alt}
-            className="h-full w-full object-contain object-center"
+            className={`h-full w-full object-center ${imageFit === "cover" ? "object-cover" : "object-contain"}`}
             loading="lazy"
             decoding="async"
           />
